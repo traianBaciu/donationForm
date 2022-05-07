@@ -13,13 +13,13 @@ const addMoney = function (donatedSum) {
   const updatedAmount = document.getElementById("amount-required");
   if (updatedAmount) {
     if (donatedSum <= 0) alert("Please donate a proper amount!");
-    let totalDonors = Number(donors.innerText);
-    donors.innerText = `${totalDonors + 1}`;
     if (donatedSum >= rest) {
       needed.innerText = "We reached the desired sum! Thank you!";
       progress.style.width = "100%";
       arrow.style.left = "calc(100% - 12px)";
     }
+    let totalDonors = Number(donors.innerText);
+    donors.innerText = `${totalDonors + 1}`;
     reqAmount.innerText = `$${rest - donatedSum}`;
     donatedPercentage += (donatedSum / 1000) * 100;
     donatedPercentage > 100 ? (donatedPercentage = 100) : donatedPercentage;
